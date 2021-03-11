@@ -32,7 +32,13 @@ Customer is required to sign up in order to access the list of all items in inve
 * Order specific items API: `http://0.0.0.0:8000/customer/order/`
 
 ## Staged
-The django app is hosted on an EC2 server, hence you can directly check the functionality of the API through there. No auth token is required in this case, the app can be accessed [here](http://18.224.7.211:8000/shorten).
+The django app is hosted on an EC2 server, hence you can directly check the functionality of the API through there. No auth token is required in this case, the app can be accessed [here](http://18.188.236.213:8000/admin).
+
+```
+Admin creds:
+username: rishabh
+password: qwerty
+```
 
 ## Payload
 * Order API
