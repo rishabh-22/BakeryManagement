@@ -40,6 +40,8 @@ username: rishabh
 password: qwerty
 ```
 
+> * Since django has inbuilt an admin panel I haven't made the API for admin part as they can easily be accessed along with a proper front end. 
+
 ## Payload
 * Order API
 ```
