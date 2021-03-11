@@ -14,6 +14,9 @@ class Ingredients(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = "Ingredients"
+
 
 class Items(models.Model):
     name = models.CharField(max_length=200, unique=True, null=False)
@@ -26,6 +29,9 @@ class Items(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = "Items"
 
 
 @receiver(post_save, sender=User)
