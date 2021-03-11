@@ -94,14 +94,14 @@ def place_order_view(request):
     :return:
     """
     try:  # todo: add provision for adding more than one item in a single order
+        error = False
         item_id = request.data.get('item_id', None)
         if not item_id:
             error = True
             message = "Please attach an item_id with the request."
             return
-        error = False
         item = Items.objects.get(id=item_id)
-        if item.quantity > 0:
+        if item.quantity > 0 and item.quantity > request.data.get('quantity', 1):
             item.quantity -= request.data.get('quantity', 1)
             order = Orders.objects.create(
                 buyer=request.user,
@@ -129,7 +129,7 @@ def place_order_view(request):
             }
         else:
             error = True
-            message = "Sorry, that product is out of stock."
+            message = "Sorry, that product is out of stock for this quantity."
     except ObjectDoesNotExist:
         error = True
         message = "Sorry, you seem to have an id of an item which isn't available with us."
